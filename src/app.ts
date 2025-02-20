@@ -8,11 +8,11 @@ const app = express();
 
 // parsers
 app.use(express.json());
-app.use(cors({origin:"https://tennis-test-deploy.vercel.app",credentials:true}));
+app.use(cors({ origin: "http://localhost:8000", credentials: true }));
 
 // application routes
-app.use('/api/members', router);
-app.use('/api/auth', authRouter);
+app.use("/api/members", router);
+app.use("/api/auth", authRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello World!");
